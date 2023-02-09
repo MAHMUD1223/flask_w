@@ -1,0 +1,9 @@
+#pip env req cmd
+
+ to start pipenv shell
+
+# to start flask
+ win - set FLASK={file name}
+ lin - export FLASK={file name}
+# to set debug to true
+ export FLASK_DEBUG=1
