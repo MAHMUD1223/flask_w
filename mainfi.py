@@ -2,8 +2,9 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 #sqllight db
-from flask_sqlalchemy import SQLAlchemy
-db = SQLAlchemy(app)
+'''
+from flask_SQLAlchemy import SQLAlchemy
+db = SQLAlchemy(app)'''
 
 
 #route
@@ -17,3 +18,5 @@ def index():
 '''@app.route('/about/<username>')
 def about(username):
     return f'<h1>This page is about {username}</h1>'''
+
+app.run()
