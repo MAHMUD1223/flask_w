@@ -1,7 +1,12 @@
 #created on 9/2/2023 at 6p.m
 from flask import Flask, render_template
 app = Flask(__name__)
+#sqllight db
+from flask_sqlalchemy import SQLAlchemy
+db = SQLAlchemy(app)
 
+
+#route
 @app.route('/')
 # @app.route('/home')
 def index():
