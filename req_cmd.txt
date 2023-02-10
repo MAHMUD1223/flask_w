@@ -7,3 +7,4 @@
  lin - export FLASK={file name}
 # to set debug to true
  export FLASK_DEBUG=1
+ 
