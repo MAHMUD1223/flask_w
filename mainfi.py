@@ -11,23 +11,23 @@ class user(db.Model):
     name = db.Column(db.String(length=20), nullable=False, unique=True)
 '''
 
-#route
 @app.route('/')
-# @app.route('/home')
 def index():
-    return render_template('index.html') #"Mahmud"
+    return render_template('index.html')
 
+@app.route('/ad')
+def adam():
+    return render_template('adam.html')
 
-'''@app.route('/admin/<pass>')
-def admin(pass):
-    if pass=='12345':
-        return "welcome admin"
+@app.route('/admin/<alpha>')
+def user(alpha):
+    if alpha=='12345':
+        return 'welcome'
     else:
-        return 'worng password try again'
-'''
+        return f"hell{alpha}"
 
-'''@app.route('/about/<username>')
-def about(username):
-    return f'<h1>This page is about {username}</h1>'''
+#@app.route('/about/<username>')
+#def about(username):
+#    return f'<h1>This page is about {username}</h1>
 
-#app.run()
+# app.run()
