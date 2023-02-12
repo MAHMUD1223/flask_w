@@ -1,10 +1,32 @@
-#pip env req cmd
+#to clear shell
+   import os
+   os.system("clear")
 
+#pip env req cmd
  to start pipenv shell
 
 # to start flask
  win - set FLASK={file name}
  lin - export FLASK={file name}
+
+
 # to set debug to true
  export FLASK_DEBUG=1
- 
+
+
+# to create db
+ flask shell
+ db.create_all()
+#create a db file and save
+ no1= db_name(item_mane='value', '....)
+ db.session.add(db_name)
+ db.session.commit()
+ db.query.all()
+
+#for use in db
+ for i in db_name.query.all():
+     i.db_item_name
+     ..........
+  to see the filterd value
+   for i in db_name.filter_by(condition_likr{price=500}):
+      i.db_item_name {which thing to print}

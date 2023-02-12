@@ -6,5 +6,25 @@ admin page
 {% block body %}
 
 <h1>hello this is the admin page</h1>
+here is the user list
+
+<table class="table table-hover table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for i in user %}
+        <tr>
+            <td>{{i.id}} </td>
+            <td>{{i.name}} </td>
+            <td>{{i.pasd}} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
