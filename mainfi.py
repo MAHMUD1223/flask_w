@@ -40,8 +40,8 @@ def index():
 def user(alpha):
     if alpha=='12345':
         user = User.query.all()
-        log = Log.query.all()
-        return render_template('adam.html', user=user, log=log)
+        #log = Log.query.all()
+        return render_template('adam.html', user=user)
     else:
         return f"ah ah a you didn't say the magic word insted said {alpha}"
 
