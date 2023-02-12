@@ -2,20 +2,36 @@
 from flask import Flask, render_template
 app = Flask(__name__)
 
+
+
 #sqllight db
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 db = SQLAlchemy(app)
 
-
 class User(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     name = db.Column(db.String(length=20), unique=True)
     pasd = db.Column(db.String(length=4))
+#    owend= db.Column(db.Integer(), db.ForeignKey("log.id"))
+#    def __repr__(self):
+#        return f'admin {self.name}'
+#
+#class Log(db.Model):
+#    id = db.Column(db.Integer(), primary_key=True)
+#    username = db.Column(db.String(length=10), nullable=False, unique=True )
+#    email_address = db.Column(db.String(length=30), nullable=False, unique=True)
+#    pass_hash = db.Column(db.String(length=60), nullable=False)
+#    budget = db.Column(db.INTEGER(), nullable=False, default=1000)
+#    result = db.relationship('User', backref='owend_user', lazy=True)
 
-    def __repr__(self):
-        return f'User {self.name}'
 
+
+
+
+
+
+#routes
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -31,5 +47,4 @@ def user(alpha):
 #@app.route('/about/<username>')
 #def about(username):
 #    return f'<h1>This page is about {username}</h1>
-
 # app.run()

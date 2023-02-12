@@ -17,6 +17,8 @@
 # to create db
  flask shell
  db.create_all()
+ $clean
+ db.drop_all()
 #create a db file and save
  no1= db_name(item_mane='value', '....)
  db.session.add(db_name)
