@@ -26,5 +26,32 @@ here is the user list
         {% endfor %}
     </tbody>
 </table>
+<p>
+    The normal-user are 
+    <table class="table table-hover table-dark">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Password</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in log %}
+            <tr>
+                <td>{{i.}} </td>
+                <td>{{i.}} </td>
+                <td>{{i.}} </td>
+                <td>{{i.}} </td>
+                <td>{{i.}} </td>
+                <td>{{i.}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</p>
 
 {% endblock %}
