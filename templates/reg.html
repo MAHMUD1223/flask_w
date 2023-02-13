@@ -1,0 +1,13 @@
+{% extends 'main.html' %}
+
+{% block body %}
+<h1>Hello</h1>
+<form action="/net" method="get" class="form-register" style="colour:white;" >
+
+    {{form.hidden_tag()}}
+
+    {{form.username.label(style="display:none;")}}
+    {{form.username(class="form-control", placeholder="username")}}
+    {{form.submit(class="btn btn-primary")}}
+</form>
+{% endblock %}

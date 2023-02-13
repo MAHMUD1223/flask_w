@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 
 
-#sqllight db
+#sqllight db              start
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
 db = SQLAlchemy(app)
@@ -24,6 +24,34 @@ class Log(db.Model):
     pass_hash = db.Column(db.String(length=60), nullable=False)
     budget = db.Column(db.INTEGER(), nullable=False, default=1000)
     result = db.relationship('User', backref='owend_user', lazy=True)
+#                         end
+
+
+#making from                       start
+from flask_wtf import FlaskForm
+from wtforms import StringField, PasswordField, SubmitField
+app.config['SECRET_KEY']='1192b6f912b6e07ab9fb30tf'
+
+class RegForm(FlaskForm):
+    username= StringField(label="Name")
+    email_address= StringField(label='Mail')
+    pasd1= PasswordField(label="password")
+    pasd2= PasswordField(label="password again")
+    submit = SubmitField(label="Submit!")
+
+#                       end
+
+@app.route('/reg')
+def reg():
+    form = RegForm()
+    return render_template("reg.html", form=form)
+@app.route('/net', methods=['GET', 'POST'])
+def net():
+    form=RegForm()
+    name= form.username.data
+    age="16"
+    parm={'name': name, 'age':age}
+    return render_template('net.html', parm=parm)
 
 
 
@@ -32,7 +60,7 @@ class Log(db.Model):
 
 
 #routes
-@app.route('/')
+@app.route('/',)
 def index():
     return render_template('index.html')
 
