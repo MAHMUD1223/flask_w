@@ -1,15 +1,5 @@
 {
-	"builds":[
-		{
-			"src":"/mainfi.py",
-			"use":"@vercel/python"
-		}
-	],
-	"routes":[
-		{
-			"src":"/(.*)",
-			"dest":"/mainfi.py"
-		}
-
-	]
+  "rewrites": [
+    { "source": "/(.*)", "destination": "mainfi" }
+  ]
 }
