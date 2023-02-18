@@ -14,6 +14,14 @@
  export FLASK_DEBUG=1
 
 
+
+#jinja2
+    src="{{ url for('static', filename="filename") }}"
+
+
+
+
+
 # to create db
  flask shell
  db.create_all()

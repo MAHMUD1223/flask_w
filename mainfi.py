@@ -4,6 +4,9 @@ app = Flask(__name__)
 
 
 
+
+
+
 #sqllight db              start
 from flask_sqlalchemy import SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///user.db'
@@ -76,4 +79,4 @@ def user(alpha):
 #@app.route('/about/<username>')
 #def about(username):
 #    return f'<h1>This page is about {username}</h1>
-# app.run()
+# app.run('0.0.0.0', poart=8000, debug=True)
